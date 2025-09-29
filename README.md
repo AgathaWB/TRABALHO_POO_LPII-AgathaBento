@@ -13,4 +13,9 @@ Funcionário:
 - Cadastrar livros
 - Cadastrar autores
 - Realizar empréstimos (simulado)
-# COMO RODAR?
+# COMO EXECUTAR?
+clonar o repositorio:
+https://github.com/AgathaWB/TRABALHO_POO_LPII-AgathaBento.git
+escolher como logar:
+1. Deseja fazer login como cliente?
+2. Deseja fazer login como funcionario?
