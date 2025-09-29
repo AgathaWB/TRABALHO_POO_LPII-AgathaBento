@@ -10,9 +10,21 @@ public class Funcionario {
     private String tipoContrato;
     private LocalDate admissao;
     private String salario;
-    public Funcionario(String nome, String cpf, String rg2, String escolaridade2, String ctps2, String banco,
-            String cargo2, String estadoCivil2, String tipoContrato2, String salario2) {
-        //TODO Auto-generated constructor stub
+    public Funcionario(
+        String nome, String cpf, String senha, String endereco, String email, String telefone,
+        String nascimento, String cep, String cddEstado, String genero,
+        String rg, String escolaridade, String ctps, String banco,
+        String cargo, String estadoCivil, String tipoContrato, String salario
+    ) {
+        super();
+        this.rg = rg;
+        this.escolaridade = escolaridade;
+        this.ctps = ctps;
+        this.nBanco = banco;
+        this.cargo = cargo;
+        this.estadoCivil = estadoCivil;
+        this.tipoContrato = tipoContrato;
+        this.salario = salario;
     }
     public String getRg() {
         return rg;
@@ -68,6 +80,6 @@ public class Funcionario {
     public void setSalario(String salario) {
         this.salario = salario;
     }
-
+    
     
 }

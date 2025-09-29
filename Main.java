@@ -51,19 +51,19 @@ public class Main {
         String cpf = LER.nextLine();
         System.out.print("Senha: ");
         String senha = LER.nextLine();
-        System.out.println("Endereço: ");
+        System.out.print("Endereço: ");
         String endereco = LER.nextLine();
-        System.out.println("Email: ");
+        System.out.print("Email: ");
         String email = LER.nextLine();
-        System.out.println("Telefone: ");
+        System.out.print("Telefone: ");
         String telefone = LER.nextLine();
-        System.out.println("Data de nascimento: ");
+        System.out.print("Data de nascimento: ");
         String nascimentoC = LER.nextLine();
-        System.out.println("Cep: ");
+        System.out.print("Cep: ");
         String cep = LER.nextLine();
-        System.out.println("cidade/estado: ");
+        System.out.print("cidade/estado: ");
         String cddEstado = LER.nextLine();
-        System.out.println("Genero: ");
+        System.out.print("Genero: ");
         String genero = LER.nextLine();
 
         
@@ -73,8 +73,28 @@ public class Main {
 
     public static Funcionario cadastrarFuncionario() {
         System.out.println("\nCADASTRO DE FUNCIONÁRIO:");
-        Pessoa pessoa = cadastrarPessoa();
-
+    
+        System.out.print("Nome: ");
+        String nome = LER.nextLine();
+        System.out.print("CPF: ");
+        String cpf = LER.nextLine();
+        System.out.print("Senha: ");
+        String senha = LER.nextLine();
+        System.out.print("Endereço: ");
+        String endereco = LER.nextLine();
+        System.out.print("Email: ");
+        String email = LER.nextLine();
+        System.out.print("Telefone: ");
+        String telefone = LER.nextLine();
+        System.out.print("Data de nascimento: ");
+        String nascimento = LER.nextLine();
+        System.out.print("CEP: ");
+        String cep = LER.nextLine();
+        System.out.print("Cidade/Estado: ");
+        String cddEstado = LER.nextLine();
+        System.out.print("Gênero: ");
+        String genero = LER.nextLine();
+    
         System.out.print("RG: ");
         String rg = LER.nextLine();
         System.out.print("Escolaridade: ");
@@ -91,12 +111,13 @@ public class Main {
         String tipoContrato = LER.nextLine();
         System.out.print("Salário: ");
         String salario = LER.nextLine();
-
-        Funcionario funcionario = new Funcionario(pessoa.getNome(), pessoa.getCpf(), rg, escolaridade, ctps, banco, cargo, estadoCivil, tipoContrato, salario);
-        return funcionario;
+    
+        return new Funcionario(nome, cpf, senha, endereco, email, telefone, nascimento,
+                               cep, cddEstado, genero, rg, escolaridade, ctps, banco,
+                               cargo, estadoCivil, tipoContrato, salario);
     }
-
-    public static void menuCliente(Pessoa cliente, Pessoa p) {
+    
+    public static void menuCliente(Pessoa cliente, Pessoa p) {//+/-
         char opcao;
         do {
             System.out.println("\n--- MENU CLIENTE ---");
@@ -150,34 +171,59 @@ public class Main {
             System.out.println("\n--- MENU FUNCIONÁRIO ---");
             System.out.println("1. Fazer Empréstimo");
             System.out.println("2. Cadastrar Livro");
-            System.out.println("3. Excluir Livro");
-            System.out.println("4. Cadastrar Autor");
-            System.out.println("5. Meus Dados");
-            System.out.println("6. Sair");
+            System.out.println("3. Cadastrar Autor");
+            System.out.println("4. Sair");
 
-            opcao = lerRestricaoRec('1', '2', '3', '4', '5', '6');
+            opcao = lerRestricaoRec('1', '2', '3', '4');
 
             switch (opcao) {
                 case '1':
-                    
+                System.out.println("Nome: ");
+                String nomeC = LER.nextLine();
+                System.out.println("\nSenha:");
+                String senha = LER.nextLine();
+                System.out.println("\nLivros para empréstimo:");
+                String livro = LER.nextLine();
+                System.out.println("\nData de empréstimo:");
+                String emprestimo = LER.nextLine();
+                System.out.println("\nDevolução:");
+                String devolucao = LER.nextLine();
+                System.out.println("\nFuncionario: ");
+                String nomeF = LER.nextLine();
+                System.out.println("\nEmpréstimo concluído do(s) livro(s): " + livro + "!");
                     break;
                 case '2':
-                   
+                System.out.println("\nNome do livro: ");
+                String nomeL = LER.nextLine();
+                System.out.println("\nEditora: ");
+                String editora = LER.nextLine();
+                System.out.println("\nAutor: ");
+                String autor = LER.nextLine();
+                System.out.println("\nQuantidade de paginas: ");
+                String qtdPagina = LER.nextLine();
+                System.out.println("\nQuantidade de exemplar: ");
+                String qtdExemplar = LER.nextLine();
+                System.out.println("\nIdioma: ");
+                String idioma = LER.nextLine();
+                System.out.println("\nSinopse: ");
+                String sinopse = LER.nextLine();
                     break;
                 case '3':
-                    
+                System.out.println("\nNome do Autor: ");
+                String nomeA = LER.nextLine();
+                System.out.println("\nNascionalidade: ");
+                String nascionalidade = LER.nextLine();
+                System.out.println("\nIdentificador de Autoridade: ");
+                String identificadorAutoridade = LER.nextLine();
+                System.out.println("\nQuantidade de livros na biblioteca: ");
+                System.out.println("Autor cadastrado!");
+                String qtdL = LER.nextLine();
                     break;
                 case '4':
-                   
-                    break;
-                case '5':
-                    System.out.println(funcionario);
-                    break;
-                case '6':
                     break;
             }
 
-        } while (opcao != '6');
+        } while (opcao != '4');
     }
 
     public static char lerRestricaoRec(char... opcoesValidas) {
@@ -191,5 +237,7 @@ public class Main {
         return lerRestricaoRec(opcoesValidas);
     }
 
-    
+   
 }
+    
+
